@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">FocusGuard</string>
+    <string name="device_admin_description">FocusGuard, çocuğun cihazını koruması için Cihaz Yöneticisi yetkisine ihtiyaç duyar. Bu yetki olmadan uygulama kaldırılabilir.</string>
+</resources>

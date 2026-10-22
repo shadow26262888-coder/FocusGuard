@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/contentGroup"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ebeveyn ile Eşleş"
+                android:textSize="24sp"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ebeveyn cihazında bu QR kodu taratın\nveya 6 haneli kodu girin"
+                android:textSize="14sp"
+                android:textColor="#AAAACC"
+                android:gravity="center"
+                android:layout_marginBottom="32dp" />
+
+            <!-- QR Code -->
+            <ImageView
+                android:id="@+id/ivQrCode"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:background="#FFFFFF"
+                android:padding="8dp"
+                android:layout_marginBottom="24dp" />
+
+            <!-- 6 haneli kod -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="6 Haneli Kod:"
+                android:textSize="14sp"
+                android:textColor="#AAAACC"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvPairingCode"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="------"
+                android:textSize="40sp"
+                android:textColor="#4CAF50"
+                android:textStyle="bold"
+                android:letterSpacing="0.3"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:id="@+id/tvDeviceId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cihaz ID: ..."
+                android:textSize="11sp"
+                android:textColor="#666688"
+                android:layout_marginBottom="32dp" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:indeterminate="true"
+                android:layout_width="200dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Ebeveyn bağlantısı bekleniyor..."
+                android:textSize="13sp"
+                android:textColor="#AAAACC"
+                android:layout_marginTop="8dp" />
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

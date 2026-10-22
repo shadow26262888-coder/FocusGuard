@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000">
+
+    <!-- Ana içerik -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="32dp">
+
+        <!-- Kilit ikonu -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="🔒"
+            android:textSize="72sp"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Başlık -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ebeveyniniz\ncihazınızı kilitledi"
+            android:textSize="28sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:gravity="center"
+            android:layout_marginBottom="48dp" />
+
+        <!-- Kod girişi -->
+        <EditText
+            android:id="@+id/etCode"
+            android:layout_width="220dp"
+            android:layout_height="56dp"
+            android:hint="Kodu girin"
+            android:inputType="numberPassword"
+            android:textSize="20sp"
+            android:textColor="#FFFFFF"
+            android:textColorHint="#888888"
+            android:gravity="center"
+            android:background="@drawable/bg_code_input"
+            android:layout_marginBottom="16dp" />
+
+        <Button
+            android:id="@+id/btnSubmitCode"
+            android:layout_width="220dp"
+            android:layout_height="52dp"
+            android:text="Kilidi Aç"
+            android:textSize="16sp"
+            android:backgroundTint="#333333"
+            android:layout_marginBottom="24dp" />
+
+        <!-- Master kod kısayolu -->
+        <TextView
+            android:id="@+id/tvMasterCodeHint"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Şu anki kod çalışmıyor mu? Buraya tıklayın"
+            android:textSize="13sp"
+            android:textColor="#888888"
+            android:textDecoration="underline"
+            android:paddingTop="8dp"
+            android:paddingBottom="8dp" />
+
+        <!-- Gizli master kod alanı -->
+        <LinearLayout
+            android:id="@+id/layoutMasterCode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:visibility="gone"
+            android:background="#111111"
+            android:padding="16dp"
+            android:layout_marginTop="8dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="⚠️ Bu kodu çocuğunuza göstermeyin"
+                android:textSize="12sp"
+                android:textColor="#FF9800"
+                android:gravity="center"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/etMasterCode"
+                android:layout_width="200dp"
+                android:layout_height="52dp"
+                android:hint="Master kod"
+                android:inputType="numberPassword"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#888888"
+                android:gravity="center"
+                android:background="@drawable/bg_code_input"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnSubmitMasterCode"
+                android:layout_width="200dp"
+                android:layout_height="48dp"
+                android:text="Onayla"
+                android:backgroundTint="#9C27B0" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- Arama butonu (sağ alt) -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnCall"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="24dp"
+        android:src="@drawable/ic_call"
+        android:contentDescription="Ara"
+        app:backgroundTint="#4CAF50"
+        app:tint="#FFFFFF"
+        xmlns:app="http://schemas.android.com/apk/res-auto" />
+
+</FrameLayout>

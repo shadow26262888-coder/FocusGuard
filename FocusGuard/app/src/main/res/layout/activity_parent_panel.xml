@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1A1A2E">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="👨‍👩‍👧 Ebeveyn Paneli"
+            android:textSize="26sp"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <!-- ---- EŞLEŞİLMEDİ ---- -->
+        <LinearLayout
+            android:id="@+id/layoutPairing"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Çocuk cihazı ile bağlantı kurun"
+                android:textSize="18sp"
+                android:textColor="#FFFFFF"
+                android:layout_marginBottom="16dp" />
+
+            <Button
+                android:id="@+id/btnScanQr"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="📷 QR Kod Tara"
+                android:backgroundTint="#4CAF50"
+                android:layout_marginBottom="12dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="veya manuel kod girin:"
+                android:textColor="#AAAACC"
+                android:layout_marginBottom="8dp" />
+
+            <EditText
+                android:id="@+id/etChildCode"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Çocuk Cihaz ID / 6 haneli kod"
+                android:inputType="text"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#666688"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <EditText
+                android:id="@+id/etMasterCode"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:hint="Master Kod belirleyin (min 4 hane)"
+                android:inputType="numberPassword"
+                android:textColor="#FFFFFF"
+                android:textColorHint="#666688"
+                android:background="@drawable/bg_input"
+                android:padding="12dp"
+                android:layout_marginBottom="12dp" />
+
+            <Button
+                android:id="@+id/btnManualPair"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:text="Bağlan"
+                android:backgroundTint="#2196F3"
+                android:layout_marginBottom="12dp" />
+
+            <ProgressBar
+                android:id="@+id/progressPairing"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center" />
+
+        </LinearLayout>
+
+        <!-- ---- EŞLEŞİLDİ ---- -->
+        <LinearLayout
+            android:id="@+id/layoutControl"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tvPairedChildId"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Çocuk ID: ..."
+                android:textSize="13sp"
+                android:textColor="#AAAACC"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tvStatus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Durum: Açık 🔓"
+                android:textSize="18sp"
+                android:textColor="#4CAF50"
+                android:layout_marginBottom="24dp" />
+
+            <!-- Kilit Kontrol -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="24dp">
+
+                <Button
+                    android:id="@+id/btnLock"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:text="🔒 Kilitle"
+                    android:textSize="16sp"
+                    android:backgroundTint="#F44336"
+                    android:layout_marginEnd="8dp" />
+
+                <Button
+                    android:id="@+id/btnUnlock"
+                    android:layout_width="0dp"
+                    android:layout_height="64dp"
+                    android:layout_weight="1"
+                    android:text="🔓 Kilidi Aç"
+                    android:textSize="16sp"
+                    android:backgroundTint="#4CAF50" />
+
+            </LinearLayout>
+
+            <!-- Günlük Kod -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardBackgroundColor="#252547"
+                app:cardCornerRadius="12dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Günlük Erişim Kodu"
+                        android:textColor="#AAAACC"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="4dp" />
+
+                    <TextView
+                        android:id="@+id/tvDailyCode"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Günlük Kod: ------"
+                        android:textColor="#FFFFFF"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="12dp" />
+
+                    <Button
+                        android:id="@+id/btnRefreshDailyCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="🔄 Kodu Yenile"
+                        android:backgroundTint="#FF9800" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Master Kod Güncelle -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardBackgroundColor="#252547"
+                app:cardCornerRadius="12dp"
+                xmlns:app="http://schemas.android.com/apk/res-auto">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Master Kod (Kalıcı)"
+                        android:textColor="#AAAACC"
+                        android:textSize="13sp"
+                        android:layout_marginBottom="8dp" />
+
+                    <EditText
+                        android:id="@+id/etMasterCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="52dp"
+                        android:hint="Yeni master kod"
+                        android:inputType="numberPassword"
+                        android:textColor="#FFFFFF"
+                        android:textColorHint="#666688"
+                        android:background="@drawable/bg_input"
+                        android:padding="12dp"
+                        android:layout_marginBottom="8dp" />
+
+                    <Button
+                        android:id="@+id/btnSaveMasterCode"
+                        android:layout_width="match_parent"
+                        android:layout_height="44dp"
+                        android:text="Kaydet"
+                        android:backgroundTint="#9C27B0" />
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>
